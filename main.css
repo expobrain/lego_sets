@@ -1,0 +1,95 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 2.5rem;
+}
+
+/* Thumbnails Grid */
+.thumbnails-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.thumbnail-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.thumbnail-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.thumbnail-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.thumbnail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail-card:hover .thumbnail-image img {
+    transform: scale(1.05);
+}
+
+.thumbnail-title {
+    padding: 1rem;
+    text-align: center;
+}
+
+.thumbnail-title h2 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .thumbnails-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+} 

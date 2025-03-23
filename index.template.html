@@ -1,0 +1,18 @@
+
+<div class="container">
+    <h1>LEGO Instructions</h1>
+    <div class="thumbnails-grid">
+        {% for pdf in site.pdfs %}
+        <div class="thumbnail-card">
+            <a href="{{ pdf.url }}" class="thumbnail-link">
+                <div class="thumbnail-image">
+                    <img src="{{ pdf.thumbnail }}" alt="{{ pdf.title }}">
+                </div>
+                <div class="thumbnail-title">
+                    <h2>{{ pdf.title }}</h2>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
