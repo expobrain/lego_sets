@@ -1,11 +1,2 @@
-- title: "LEGO Set 1234"
-  url: "/pdfs/set1234.pdf"
-  thumbnail: "/images/thumbnails/set1234.jpg"
-
-- title: "LEGO Set 5678"
-  url: "/pdfs/set5678.pdf"
-  thumbnail: "/images/thumbnails/set5678.jpg"
-
-- title: "LEGO Set 9012"
-  url: "/pdfs/set9012.pdf"
-  thumbnail: "/images/thumbnails/set9012.jpg" 
+- code: "60454"
+- code: "3184"

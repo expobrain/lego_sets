@@ -1,18 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="container">
-    <h1>LEGO Instructions</h1>
-    <div class="thumbnails-grid">
-        {% for pdf in site.pdfs %}
-        <div class="thumbnail-card">
-            <a href="{{ pdf.url }}" class="thumbnail-link">
-                <div class="thumbnail-image">
-                    <img src="{{ pdf.thumbnail }}" alt="{{ pdf.title }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO Instructions Gallery</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>LEGO Instructions</h1>
+            <div class="thumbnails-grid">
+                {% for pdf in site.pdfs %}
+                <div class="thumbnail-card">
+                    <a href="https://www.lego.com/en-gb/service/buildinginstructions/{{ pdf.code }}"
+                        class="thumbnail-link">
+                        <div class="thumbnail-image">
+                            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/{{ pdf.code }}_Prod.png">
+                        </div>
+                    </a>
                 </div>
-                <div class="thumbnail-title">
-                    <h2>{{ pdf.title }}</h2>
-                </div>
-            </a>
+                {% endfor %}
+            </div>
         </div>
-        {% endfor %}
-    </div>
-</div>
+    </main>
+
+</body>
+
+</html>
