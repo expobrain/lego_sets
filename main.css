@@ -28,8 +28,8 @@ h1 {
 /* Thumbnails Grid */
 .thumbnails-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
     padding: 1rem;
 }
 
@@ -39,6 +39,9 @@ h1 {
     overflow: hidden;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 .thumbnail-card:hover {
@@ -49,47 +52,54 @@ h1 {
 .thumbnail-link {
     text-decoration: none;
     color: inherit;
+    display: block;
 }
 
 .thumbnail-image {
     width: 100%;
-    height: 300px;
+    height: 150px;
     overflow: hidden;
+    margin-top: 0.5rem;
 }
 
 .thumbnail-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    object-fit: contain;
 }
 
-.thumbnail-card:hover .thumbnail-image img {
-    transform: scale(1.05);
-}
-
-.thumbnail-title {
-    padding: 1rem;
-    text-align: center;
-}
-
-.thumbnail-title h2 {
+h3.thumbnail-title {
     font-size: 1.2rem;
     color: #2c3e50;
     margin: 0;
+    text-align: center;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .thumbnails-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
-    
+}
+
+@media (max-width: 768px) {
     .container {
         padding: 1rem;
     }
     
     h1 {
         font-size: 2rem;
+    }
+    
+    .thumbnail-card {
+        max-width: 250px;
+    }
+    
+    .thumbnail-image {
+        height: 200px;  /* Slightly smaller height on mobile */
+    }
+
+    .thumbnails-grid {
+        grid-template-columns: 1fr;
     }
 } 

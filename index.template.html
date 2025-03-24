@@ -5,16 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEGO Instructions Gallery</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-        </nav>
-    </header>
 
     <main>
         <div class="container">
@@ -22,10 +16,12 @@
             <div class="thumbnails-grid">
                 {% for pdf in site.pdfs %}
                 <div class="thumbnail-card">
-                    <a href="https://www.lego.com/en-gb/service/buildinginstructions/{{ pdf.code }}"
-                        class="thumbnail-link">
+                    <h3 class="thumbnail-title">{{ pdf.name }}</h3>
+                    <a href="{{ pdf.instructions_url }}"
+                        class="thumbnail-link"
+                        target="_blank">
                         <div class="thumbnail-image">
-                            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/{{ pdf.code }}_Prod.png">
+                            <img src="{{ pdf.thumbnail_url }}">
                         </div>
                     </a>
                 </div>
